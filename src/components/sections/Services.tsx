@@ -57,23 +57,55 @@ export function Services() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               key={idx}
-              className="bg-white p-[40px] rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100/50 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              className="relative group h-full"
             >
-              <div className="text-[42px] mb-8 leading-none drop-shadow-sm select-none">
-                {service.icon}
-              </div>
-              
-              <h3 className="font-[800] mb-[16px] text-[22px] text-gray-900 tracking-tight leading-[1.3]">
-                {service.title}
-              </h3>
-              
-              <p className="text-[15.5px] text-gray-500 leading-[1.65] mb-8 flex-1">
-                {service.description}
-              </p>
+              <div className="bg-white p-[40px] rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-gray-100 placeholder:hover:shadow-[0_40px_80px_-15px_rgb(0,0,0,0.08)] transition-all duration-500 flex flex-col items-start h-full relative z-10 overflow-hidden">
+                {/* SVG Snake Border Overlay */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" preserveAspectRatio="none">
+                  <motion.rect
+                    width="100%"
+                    height="100%"
+                    rx="32"
+                    fill="none"
+                    stroke="url(#snakeGradient)"
+                    strokeWidth="4"
+                    initial={{ pathLength: 0, pathOffset: 0 }}
+                    whileHover={{ 
+                      pathLength: 0.25, 
+                      pathOffset: [0, 1],
+                      transition: { 
+                        pathLength: { duration: 0.4 },
+                        pathOffset: { duration: 3, repeat: Infinity, ease: "linear" }
+                      }
+                    }}
+                  />
+                  <defs>
+                    <linearGradient id="snakeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#F37021" />
+                      <stop offset="100%" stopColor="#00A99D" />
+                    </linearGradient>
+                  </defs>
+                </svg>
 
-              <Link to="/services" className="text-blue-600 hover:text-blue-700 font-[600] text-[15px] flex items-center transition-colors w-max">
-                Learn More <ChevronRight className="w-4 h-4 ml-1" />
-              </Link>
+                <div className="w-16 h-16 bg-virinchi-gray rounded-[22px] flex items-center justify-center text-[32px] mb-10 leading-none group-hover:bg-brand-orange/10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shrink-0 shadow-inner">
+                  {service.icon}
+                </div>
+                
+                <h3 className="font-[800] mb-[16px] text-[24px] text-gray-900 tracking-tight leading-tight">
+                  {service.title}
+                </h3>
+                
+                <p className="text-[16px] text-gray-400 leading-relaxed mb-8 flex-1 font-medium">
+                  {service.description}
+                </p>
+
+                <Link to="/services" className="group/link flex items-center gap-3 font-[800] text-[13px] uppercase tracking-widest text-gray-900 hover:text-brand-orange transition-all">
+                  <span>Explore More</span>
+                  <div className="relative w-8 h-[2px] bg-gray-200 overflow-hidden">
+                    <div className="absolute inset-0 bg-brand-orange -translate-x-full group-hover/link:translate-x-0 transition-transform duration-300" />
+                  </div>
+                </Link>
+              </div>
             </motion.div>
           ))}
         </div>

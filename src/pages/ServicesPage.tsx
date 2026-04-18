@@ -64,7 +64,22 @@ export function ServicesPage() {
     <div className="pt-20 min-h-screen bg-white">
       {/* Page Header */}
       <div className="bg-virinchi-dark text-white py-24 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/10 to-brand-teal/10 mix-blend-overlay opacity-50" />
+        {/* Animated Background Image */}
+        <motion.div 
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.25 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute inset-0 z-0"
+        >
+          <img 
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2026&auto=format&fit=crop" 
+            alt="Digital Solutions" 
+            className="w-full h-full object-cover grayscale"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-virinchi-dark via-virinchi-dark/60 to-transparent" />
+        </motion.div>
+
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/10 to-brand-teal/10 mix-blend-overlay opacity-50 z-0" />
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

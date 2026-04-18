@@ -13,29 +13,39 @@ export function Showreel() {
   return (
     <section className="section-padding relative bg-virinchi-dark border-y border-white/5 overflow-hidden">
       <div className="container mx-auto px-6 mb-16 text-center">
-        <h2 className="text-[32px] md:text-[56px] font-[800] text-white tracking-tight leading-tight text-balance">
-          Impactful Campaigns
+        <h2 className="text-[42px] md:text-[64px] font-[900] tracking-tighter leading-none mb-6">
+          <span className="text-white">Impactful</span> <span className="text-gradient-brand">Campaigns</span>
         </h2>
+        <p className="text-white/50 text-lg md:text-xl font-medium max-w-2xl mx-auto">
+          We bring brands to life through moving stories and strategic creative execution.
+        </p>
       </div>
 
-      <div className="relative flex overflow-hidden">
+      <div className="relative flex overflow-hidden py-4 cursor-grab active:cursor-grabbing">
         <motion.div 
           className="flex gap-6 items-center shrink-0"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 40, ease: "linear", repeat: Infinity }}
+          drag="x"
+          dragConstraints={{ left: -2000, right: 0 }}
+          animate={isPlaying ? {} : { x: ["0%", "-50%"] }}
+          transition={{ duration: 30, ease: "linear", repeat: Infinity }}
           onMouseEnter={() => setIsPlaying(true)}
           onMouseLeave={() => setIsPlaying(false)}
-          style={{ animationPlayState: isPlaying ? 'paused' : 'running' }}
         >
-          {[...videos, ...videos].map((video, idx) => (
-            <div key={idx} className="relative w-[320px] md:w-[480px] rounded-[32px] overflow-hidden bg-gray-900 aspect-video cursor-pointer border border-white/10 group shadow-lg shrink-0">
-              <img src={video.img} alt={video.title} className="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-transparent transition-colors">
-                <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:bg-brand-red group-hover:border-transparent transition-all">
-                  <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
+          {[...videos, ...videos, ...videos].map((video, idx) => (
+            <div key={idx} className="relative w-[300px] md:w-[540px] rounded-[32px] overflow-hidden bg-gray-900 aspect-video cursor-pointer border border-white/10 group shadow-2xl shrink-0 transition-transform duration-500 hover:scale-[1.02]">
+              <img 
+                src={video.img} 
+                alt={video.title} 
+                className="w-full h-full object-cover opacity-60 group-hover:opacity-90 transition-all duration-700 group-hover:scale-105" 
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/10 transition-colors">
+                <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-xl flex items-center justify-center border border-white/20 group-hover:bg-brand-orange group-hover:border-transparent group-hover:scale-110 transition-all duration-300">
+                  <Play className="w-8 h-8 text-white ml-2" fill="currentColor" />
                 </div>
               </div>
-              <div className="absolute bottom-4 left-6 text-white font-bold">{video.title}</div>
+              <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
+                <div className="text-white font-[800] text-xl md:text-2xl tracking-tight">{video.title}</div>
+              </div>
             </div>
           ))}
         </motion.div>

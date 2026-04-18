@@ -25,9 +25,16 @@
   --animate-float-delayed: float 8s ease-in-out 4s infinite;
   --animate-pulse-slow: pulse-slow 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-gradient: gradient 15s ease infinite;
+  --animate-snake: snake 3s linear infinite;
 }
 
 @layer utilities {
+  .snake-border-container {
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-clip: content-box, border-box;
+    mask-composite: exclude;
+  }
+  
   .text-balance { text-wrap: balance; }
   
   .bg-gradient-brand {
@@ -78,6 +85,11 @@
     color: inherit;
     letter-spacing: -0.02em;
   }
+}
+
+@keyframes snake {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
 }
 
 @keyframes marquee {

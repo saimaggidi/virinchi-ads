@@ -7,7 +7,22 @@ export function AboutPage() {
     <div className="pt-20 min-h-screen bg-white">
       {/* Page Header */}
       <div className="bg-virinchi-dark text-white py-24 md:py-32 relative overflow-hidden">
-        <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] rounded-full bg-brand-orange/10 blur-[150px]" />
+        {/* Animated Background Image */}
+        <motion.div 
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.3 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute inset-0 z-0"
+        >
+          <img 
+            src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?q=80&w=2070&auto=format&fit=crop" 
+            alt="Agency Culture" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-virinchi-dark/80 via-virinchi-dark/60 to-virinchi-dark" />
+        </motion.div>
+
+        <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] rounded-full bg-brand-orange/10 blur-[150px] z-0" />
         
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
