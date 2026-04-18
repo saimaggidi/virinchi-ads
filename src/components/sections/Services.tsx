@@ -37,14 +37,14 @@ const SERVICES = [
 
 export function Services() {
   return (
-    <section className="py-32 relative bg-virinchi-gray overflow-hidden" id="services">
+    <section className="section-padding relative overflow-hidden bg-white" id="services">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        <div className="mb-24 text-center">
+        <div className="mb-20 text-center">
           <span className="text-brand-orange font-[700] tracking-[0.2em] text-[12px] uppercase mb-4 block">Our Expertise</span>
-          <h2 className="text-[36px] md:text-[56px] font-bold mb-6 text-gray-900 tracking-tight leading-tight max-w-3xl mx-auto">
+          <h2 className="text-[32px] md:text-[56px] font-[800] mb-6 text-gray-900 tracking-tight leading-tight max-w-3xl mx-auto text-balance">
             Everything you need to grow digitally.
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-[16px] md:text-[18px] leading-relaxed">
+          <p className="text-gray-500 max-w-2xl mx-auto text-[16px] md:text-[20px] leading-relaxed">
             We're a full-service digital agency. We combine strategic thinking with creative excellence to deliver results that matter.
           </p>
         </div>

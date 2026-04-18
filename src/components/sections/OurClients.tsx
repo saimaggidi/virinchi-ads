@@ -13,23 +13,23 @@ const CLIENTS = [
 
 export function OurClients() {
   return (
-    <section className="py-24 bg-white relative border-b border-gray-100">
-      <div className="container mx-auto px-6 max-w-6xl">
+    <section className="section-padding bg-white relative border-b border-gray-100">
+      <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-[36px] md:text-[44px] font-[700] tracking-tight text-gray-900 border-none">
+          <h2 className="text-[32px] md:text-[48px] font-[800] tracking-tight text-gray-900 leading-tight">
             Our Clients
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 overflow-hidden border border-gray-200 rounded-[32px]">
           {CLIENTS.map((client, idx) => (
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
               key={idx}
-              className="group border border-gray-200 bg-white aspect-[4/3] flex flex-col items-center justify-center p-6 hover:shadow-lg hover:border-gray-300 transition-all duration-300 cursor-default"
+              className="group bg-white flex flex-col items-center justify-center p-8 md:p-12 hover:bg-gray-50 transition-colors"
             >
               {/* Mock Logo Representations based on the provided image style */}
               <div className="flex flex-col items-center justify-center text-center">

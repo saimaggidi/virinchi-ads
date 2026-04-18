@@ -2,12 +2,12 @@ import { motion } from "motion/react";
 
 export function MissionVision() {
   return (
-    <section className="py-12 md:py-24 relative overflow-hidden bg-virinchi-gray">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="section-padding relative overflow-hidden bg-virinchi-gray">
+      <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-20">
           <div className="w-full lg:w-1/2">
             <span className="text-brand-teal font-[700] tracking-[0.2em] text-[12px] uppercase mb-4 block">Our Purpose</span>
-            <h2 className="text-[32px] md:text-[48px] font-[800] mb-6 md:mb-8 text-gray-900 tracking-tight leading-tight">
+            <h2 className="text-[32px] md:text-[56px] font-[800] mb-6 md:mb-12 text-gray-900 tracking-tight leading-tight">
               Mission & Vision
             </h2>
             

@@ -11,9 +11,9 @@ export function TrustStrip() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50 border-y border-gray-100 overflow-hidden">
-      <div className="container mx-auto px-6 mb-12 text-center">
-        <h2 className="text-[20px] md:text-[24px] font-[700] tracking-tight text-gray-900">
+    <section className="section-padding bg-virinchi-gray border-y border-gray-100 overflow-hidden">
+      <div className="container mx-auto px-6 mb-16 text-center">
+        <h2 className="text-[18px] md:text-[24px] font-[800] tracking-tight text-gray-900 uppercase tracking-[0.1em]">
           Trusted by innovative global companies
         </h2>
       </div>

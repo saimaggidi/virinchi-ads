@@ -33,13 +33,13 @@ const MARQUEE_ITEMS = [...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS];
 
 export function Testimonials() {
   return (
-    <section className="py-16 md:py-32 relative bg-white overflow-hidden">
-      <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-brand-orange/5 rounded-full blur-[100px] md:blur-[150px]" />
-      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-brand-teal/5 rounded-full blur-[100px] md:blur-[150px]" />
+    <section className="section-padding relative bg-white overflow-hidden">
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] md:w-[800px] md:h-[800px] bg-brand-orange/5 rounded-full blur-[120px] md:blur-[180px]" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] md:w-[800px] md:h-[800px] bg-brand-teal/5 rounded-full blur-[120px] md:blur-[180px]" />
       
-      <div className="container mx-auto px-4 md:px-6 relative z-10 mb-12 md:mb-20 text-center">
-        <span className="text-brand-orange font-[700] tracking-[0.2em] text-[10px] md:text-[12px] uppercase mb-4 block">Feedback</span>
-        <h2 className="text-[32px] md:text-[56px] font-[800] tracking-tight leading-tight text-gray-900">
+      <div className="container mx-auto px-6 relative z-10 mb-16 md:mb-24 text-center">
+        <span className="text-brand-orange font-[700] tracking-[0.2em] text-[12px] uppercase mb-4 block">Feedback</span>
+        <h2 className="text-[32px] md:text-[56px] font-[800] tracking-tight leading-tight text-gray-900 text-balance">
           Client Testimonials
         </h2>
       </div>

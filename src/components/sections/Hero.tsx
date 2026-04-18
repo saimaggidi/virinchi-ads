@@ -9,18 +9,31 @@ export function Hero() {
     <section className="relative min-h-[95vh] flex items-center overflow-hidden pt-28 pb-20 bg-[#050505] text-white selection:bg-brand-orange/30">
       {/* Rich Abstract Background */}
       <div className="absolute inset-0 z-0">
-        <img
+        <motion.div
+           className="absolute inset-0 bg-gradient-brand opacity-20"
+        />
+        <motion.img
           src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop"
           alt="Abstract Background"
-          className="w-full h-full object-cover opacity-[0.35] mix-blend-screen scale-105"
+          className="w-full h-full object-cover opacity-[0.25] mix-blend-screen scale-110"
+          animate={{ 
+            scale: [1.05, 1.15, 1.05],
+            x: [-20, 20, -20],
+            y: [-10, 10, -10],
+          }}
+          transition={{ 
+            duration: 30, 
+            repeat: Infinity, 
+            ease: "linear" 
+          }}
         />
         {/* Soft edge fading so it blends flawlessly into the rest of the site */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/80 to-[#050505]/40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/40 to-[#050505]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/95 to-[#050505]/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/20 to-[#050505]" />
         
         {/* Colorful deep orbs for subtle brand highlighting */}
-        <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] rounded-full bg-brand-orange/10 blur-[150px]" />
-        <div className="absolute bottom-[0%] left-[20%] w-[400px] h-[400px] rounded-full bg-brand-teal/10 blur-[150px]" />
+        <div className="absolute top-[10%] right-[15%] w-[600px] h-[600px] rounded-full bg-brand-orange/15 blur-[180px]" />
+        <div className="absolute bottom-[5%] left-[10%] w-[500px] h-[500px] rounded-full bg-brand-teal/15 blur-[180px]" />
         
         {/* Micro-animation Particles */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden hidden md:block">
@@ -63,22 +76,22 @@ export function Hero() {
               </span>
             </motion.div>
 
-            <h1 className="text-[48px] sm:text-[64px] lg:text-[76px] font-[800] tracking-[-0.04em] leading-[1.05] mb-[32px] flex flex-wrap gap-x-4">
+            <h1 className="text-[44px] sm:text-[64px] lg:text-[84px] font-[800] tracking-[-0.05em] leading-[0.95] mb-[32px] flex flex-wrap gap-x-3">
               {titleWords.map((word, idx) => (
                 <motion.span
                   key={idx}
-                  initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+                  initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  transition={{ duration: 0.6, delay: 0.1 + idx * 0.1, ease: 'easeOut' }}
+                  transition={{ duration: 0.8, delay: 0.1 + idx * 0.08, ease: 'easeOut' }}
                   className="inline-block"
                 >
                   {word}
                 </motion.span>
               ))}
               <motion.span
-                initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+                initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                transition={{ duration: 0.8, delay: 0.1 + titleWords.length * 0.1, ease: 'easeOut' }}
+                transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
                 className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-brand-red to-brand-orange bg-[length:200%_auto] animate-gradient block w-full mt-2"
               >
                 Creative Innovation
@@ -88,8 +101,8 @@ export function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="text-gray-300 text-[18px] lg:text-[22px] leading-[1.6] mb-[48px] font-[400] max-w-[560px]"
+              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+              className="text-white/70 text-[18px] lg:text-[22px] leading-[1.6] mb-[48px] font-[400] max-w-[560px] text-balance"
             >
               We design premium digital experiences, high-converting websites, and explosive marketing campaigns that dominate your market.
             </motion.p>
@@ -102,9 +115,35 @@ export function Hero() {
               className="mb-8 flex gap-6 block lg:hidden"
             >
               {[Megaphone, Target, BarChart3, Search].map((Icon, idx) => (
-                <div key={idx} className="p-3 bg-white/5 rounded-full border border-white/10">
-                  <Icon className="w-6 h-6 text-brand-orange" />
-                </div>
+                <motion.div 
+                  key={idx} 
+                  animate={{ 
+                    y: [0, -10, 0],
+                    scale: [1, 1.05, 1] 
+                  }}
+                  transition={{ 
+                    duration: 3 + idx, 
+                    repeat: Infinity, 
+                    ease: "easeInOut",
+                    delay: idx * 0.2 
+                  }}
+                  className="p-3 bg-white/5 rounded-full border border-white/10 relative overflow-hidden group shadow-[0_0_20px_rgba(255,255,255,0.05)]"
+                >
+                  <motion.div
+                    animate={{ 
+                      opacity: [0.4, 1, 0.4],
+                      rotate: [0, 5, -5, 0]
+                    }}
+                    transition={{ 
+                      duration: 2, 
+                      repeat: Infinity, 
+                      ease: "linear",
+                      delay: idx * 0.5
+                    }}
+                  >
+                    <Icon className="w-6 h-6 text-brand-orange" />
+                  </motion.div>
+                </motion.div>
               ))}
             </motion.div>
 

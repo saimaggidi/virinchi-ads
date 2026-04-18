@@ -11,9 +11,9 @@ export function Showreel() {
   ];
 
   return (
-    <section className="py-24 relative bg-[#050505] border-t border-white/5 overflow-hidden">
+    <section className="section-padding relative bg-virinchi-dark border-y border-white/5 overflow-hidden">
       <div className="container mx-auto px-6 mb-16 text-center">
-        <h2 className="text-[36px] md:text-[56px] font-bold text-white tracking-tight leading-tight">
+        <h2 className="text-[32px] md:text-[56px] font-[800] text-white tracking-tight leading-tight text-balance">
           Impactful Campaigns
         </h2>
       </div>

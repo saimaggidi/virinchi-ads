@@ -19,11 +19,11 @@ export function Portfolio() {
   const filteredItems = portfolioItems.filter(item => item.type === activeTab);
 
   return (
-    <section id="portfolio" className="py-24 bg-white relative">
+    <section id="portfolio" className="section-padding bg-white relative">
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-brand-teal font-[700] tracking-[0.2em] text-[12px] uppercase mb-4 block">Our Work</span>
-          <h2 className="text-[36px] md:text-[56px] font-[800] tracking-tight leading-tight mb-6 text-gray-900">
+          <h2 className="text-[32px] md:text-[56px] font-[800] tracking-tight leading-tight mb-6 text-gray-900 text-balance">
             Featured Projects
           </h2>
         </div>
