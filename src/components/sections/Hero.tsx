@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight, Heart, Share2, TrendingUp, Search } from "lucide-react";
+import { ArrowRight, Heart, Share2, TrendingUp, Search, Megaphone, Target, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function Hero() {
@@ -93,6 +93,20 @@ export function Hero() {
             >
               We design premium digital experiences, high-converting websites, and explosive marketing campaigns that dominate your market.
             </motion.p>
+
+            {/* Mobile marketing icons */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="mb-8 flex gap-6 block lg:hidden"
+            >
+              {[Megaphone, Target, BarChart3, Search].map((Icon, idx) => (
+                <div key={idx} className="p-3 bg-white/5 rounded-full border border-white/10">
+                  <Icon className="w-6 h-6 text-brand-orange" />
+                </div>
+              ))}
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

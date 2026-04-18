@@ -88,28 +88,34 @@ export function Header() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-[60] bg-white p-6 flex flex-col"
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-[60] pt-24 px-6 bg-[#050505]/80 backdrop-blur-3xl border-r border-white/10 flex flex-col"
           >
-            <div className="flex justify-between items-center mb-16">
-              <span className="font-heading font-bold text-xl text-text-main">VirinchiAds</span>
-              <button onClick={() => setIsMobileMenuOpen(false)}>
-                <X className="w-8 h-8 text-text-main" />
+            <div className="absolute top-6 left-6 flex justify-between w-[calc(100%-3rem)] items-center">
+              <span className="font-heading font-bold text-2xl text-white">VirinchiAds</span>
+              <button 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="p-2 bg-white/10 rounded-full text-white"
+              >
+                <X className="w-6 h-6" />
               </button>
             </div>
             
-            <div className="flex flex-col gap-6 items-center">
+            <div className="flex flex-col gap-6 items-start mt-8">
               {[
                   { name: "Home", path: "/" },
                   { name: "Services", path: "/services" },
-                  { name: "About", path: "/about" }
+                  { name: "About", path: "/about" },
+                  { name: "Contact Us", path: "/contact" }
               ].map((item) => (
                 <Link 
                   key={item.name} 
                   to={item.path}
-                  className={`text-3xl font-heading font-bold transition-colors ${location.pathname === item.path ? "text-brand-orange" : "text-text-main hover:text-brand-orange"}`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`text-4xl font-heading font-bold transition-all ${location.pathname === item.path ? "text-brand-orange" : "text-white hover:text-brand-orange"}`}
                 >
                   {item.name}
                 </Link>

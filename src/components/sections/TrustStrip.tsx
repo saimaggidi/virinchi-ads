@@ -2,28 +2,42 @@ import { motion } from "motion/react";
 
 export function TrustStrip() {
   const logos = [
-    "TechCorp", "HealthPlus", "EduGlobal", "City Politics",
-    "Nexus AI", "Growth Matrix", "Blue Hospital", "Modern College"
+    { name: "TechCorp", color: "#F37021" },
+    { name: "HealthPlus", color: "#00A99D" },
+    { name: "EduGlobal", color: "#ED1C24" },
+    { name: "Nexus AI", color: "#39B54A" },
+    { name: "Growth Matrix", color: "#7B2CBF" },
+    { name: "Blue Sphere", color: "#0077B6" },
   ];
 
   return (
-    <section className="py-12 bg-white border-y border-gray-100 overflow-hidden">
-      <div className="container mx-auto px-6 mb-8 text-center">
-        <p className="text-gray-400 text-[12px] font-[600] uppercase tracking-[0.2em]">
-          Trusted by Innovative Brands & Global Campaigns
-        </p>
+    <section className="py-20 bg-gray-50 border-y border-gray-100 overflow-hidden">
+      <div className="container mx-auto px-6 mb-12 text-center">
+        <h2 className="text-[20px] md:text-[24px] font-[700] tracking-tight text-gray-900">
+          Trusted by innovative global companies
+        </h2>
       </div>
       
-      <div className="flex gap-16 animate-marquee whitespace-nowrap overflow-hidden">
-        {[...Array(2)].map((_, i) => (
-          <div key={i} className="flex shrink-0 min-w-full justify-around items-center gap-16 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-            {logos.map((logo, idx) => (
-              <span key={idx} className="font-heading font-bold text-[22px] tracking-tight text-gray-900">
-                {logo}
+      <div className="relative flex overflow-hidden">
+        <motion.div 
+          className="flex gap-16 md:gap-24 items-center shrink-0"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 25, ease: "linear", repeat: Infinity }}
+        >
+          {[...logos, ...logos].map((logo, idx) => (
+            <div key={idx} className="flex items-center gap-3 shrink-0">
+              <div 
+                className="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-lg"
+                style={{ backgroundColor: logo.color }}
+              >
+                {logo.name[0]}
+              </div>
+              <span className="font-heading font-bold text-[18px] tracking-tight text-gray-800">
+                {logo.name}
               </span>
-            ))}
-          </div>
-        ))}
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
