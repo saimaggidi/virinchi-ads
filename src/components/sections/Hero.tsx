@@ -111,7 +111,7 @@ export function Hero() {
             </motion.div>
           </div>
 
-          <div className="w-full lg:w-[45%] relative hidden md:block h-[600px]">
+          <div className="w-full lg:w-[45%] relative hidden lg:block h-[400px] lg:h-[600px] mt-16 md:mt-0 px-6 scale-90 sm:scale-100 origin-top">
             {/* Minimalist Glass Analytics Mockups */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.9, rotate: -2 }}

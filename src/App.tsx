@@ -13,6 +13,7 @@ import { ContactPage } from "./pages/ContactPage";
 import { WorkPage } from "./pages/WorkPage";
 import { ClientPage } from "./pages/ClientPage";
 import ScrollToTop from "./components/utils/ScrollToTop";
+import { FloatingWhatsApp } from "./components/FloatingWhatsApp";
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        <FloatingWhatsApp />
       </div>
     </Router>
   );

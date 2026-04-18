@@ -55,7 +55,7 @@ export function Portfolio() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
-                className="group relative rounded-[24px] overflow-hidden aspect-[4/5] bg-gray-100 cursor-pointer shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] transition-shadow min-w-[85vw] md:min-w-0 snap-center shrink-0"
+                className="group relative rounded-[24px] overflow-hidden w-[240px] h-[380px] bg-gray-100 cursor-pointer shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] transition-shadow md:w-auto md:h-auto md:aspect-[3/4] md:min-w-0 snap-center shrink-0"
               >
                 <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                 

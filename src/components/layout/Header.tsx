@@ -50,10 +50,9 @@ export function Header() {
 
           <nav className="hidden md:flex flex-1 items-center justify-center gap-10">
             {[
+              { name: "Home", path: "/" },
               { name: "Services", path: "/services" },
-              { name: "Our Work", path: "/work" },
-              { name: "About", path: "/about" },
-              { name: "Contact", path: "/contact" }
+              { name: "About", path: "/about" }
             ].map((item) => (
               <Link 
                 key={item.name} 
@@ -72,7 +71,7 @@ export function Header() {
               to="/contact"
               className="px-[28px] py-[14px] bg-white text-black font-[700] rounded-full text-[13px] uppercase tracking-wider hover:bg-gray-200 transition-colors"
             >
-              Free Consultation
+              Contact Us
             </Link>
           </div>
 
@@ -105,9 +104,7 @@ export function Header() {
               {[
                   { name: "Home", path: "/" },
                   { name: "Services", path: "/services" },
-                  { name: "Our Work", path: "/work" },
-                  { name: "About", path: "/about" },
-                  { name: "Contact", path: "/contact" }
+                  { name: "About", path: "/about" }
               ].map((item) => (
                 <Link 
                   key={item.name} 
