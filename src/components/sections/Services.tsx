@@ -95,7 +95,22 @@ export function Services() {
                   </div>
 
                   {/* SVG Snake Border Overlay */}
-                  <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" preserveAspectRatio="none">
+                  <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" preserveAspectRatio="none">
+                    {/* Entrance Spread Animation Border */}
+                    <motion.rect
+                      width="100%"
+                      height="100%"
+                      rx="32"
+                      fill="none"
+                      stroke="url(#snakeGradient)"
+                      strokeWidth="2"
+                      initial={{ pathLength: 0, opacity: 0 }}
+                      whileInView={{ pathLength: 1, opacity: 0.1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1.5, delay: idx * 0.15, ease: "easeInOut" }}
+                    />
+                    
+                    {/* Hover Snake Animation (Existing) */}
                     <motion.rect
                       width="100%"
                       height="100%"
@@ -103,6 +118,7 @@ export function Services() {
                       fill="none"
                       stroke="url(#snakeGradient)"
                       strokeWidth="4"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                       initial={{ pathLength: 0, pathOffset: 0 }}
                       whileHover={{ 
                         pathLength: 0.3, 
