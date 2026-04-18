@@ -88,7 +88,7 @@ export function Services() {
                 key={idx}
                 className="relative group h-full"
               >
-                <div className={`bg-white p-[40px] rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-gray-100 transition-all duration-500 flex flex-col items-start h-full relative z-10 overflow-hidden ${shadowClass}`}>
+                <div className={`bg-white p-[32px] md:p-[40px] rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-gray-100 transition-all duration-500 flex flex-col items-start h-full relative z-10 overflow-hidden ${shadowClass}`}>
                   {/* Background Watermark Logo */}
                   <div className="absolute -right-10 -bottom-10 w-48 h-48 opacity-[0.03] group-hover:opacity-[0.08] group-hover:scale-110 group-hover:-rotate-12 transition-all duration-700 z-0 pointer-events-none">
                     <LogoIcon className="w-full h-full" color={watermarkColor} />
@@ -121,15 +121,15 @@ export function Services() {
                     </defs>
                   </svg>
 
-                  <div className="w-16 h-16 bg-virinchi-gray rounded-[22px] flex items-center justify-center text-[32px] mb-10 leading-none group-hover:bg-brand-orange/10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shrink-0 shadow-inner relative z-10">
+                  <div className="w-14 md:w-16 h-14 md:h-16 bg-virinchi-gray rounded-[22px] flex items-center justify-center text-[28px] md:text-[32px] mb-8 md:mb-10 leading-none group-hover:bg-brand-orange/10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shrink-0 shadow-inner relative z-10">
                     {service.icon}
                   </div>
                   
-                  <h3 className="font-[800] mb-[16px] text-[24px] text-gray-900 tracking-tight leading-tight relative z-10">
+                  <h3 className="font-[800] mb-[16px] text-[22px] md:text-[24px] text-gray-900 tracking-tight leading-tight relative z-10">
                     {service.title}
                   </h3>
                   
-                  <p className="text-[16px] text-gray-400 leading-relaxed mb-8 flex-1 font-medium relative z-10">
+                  <p className="text-[15px] md:text-[16px] text-gray-400 leading-relaxed mb-8 flex-1 font-medium relative z-10">
                     {service.description}
                   </p>
 

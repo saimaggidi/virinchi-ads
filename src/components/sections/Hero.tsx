@@ -164,13 +164,13 @@ export function Hero() {
             </motion.div>
           </div>
 
-          <div className="w-full lg:w-[45%] relative hidden lg:block h-[400px] lg:h-[600px] mt-16 md:mt-0 px-6 scale-90 sm:scale-100 origin-top">
+          <div className="w-full lg:w-[45%] relative block h-[450px] lg:h-[600px] mt-16 md:mt-0 px-6 scale-75 sm:scale-90 lg:scale-100 origin-top">
             {/* Minimalist Glass Analytics Mockups */}
             <motion.div 
-              initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
+              initial={{ opacity: 0, scale: 0.8, rotate: -2 }}
               animate={{ opacity: 1, scale: 1, rotate: 0 }}
               transition={{ duration: 1, delay: 0.3, type: "spring", bounce: 0.4 }}
-              className="absolute top-[10%] right-[10%] z-20"
+              className="absolute top-[10%] left-1/2 -translate-x-1/2 lg:translate-x-0 lg:right-[10%] z-20"
             >
               <motion.div 
                 animate={{ y: [0, -15, 0] }}

@@ -27,6 +27,9 @@ export function MissionVision() {
 
             {/* Background Decorative Element */}
             <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-brand-teal/10 rounded-full blur-3xl z-0" />
+            
+            {/* Mobile-only accent pulse */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-full bg-brand-orange/5 blur-[100px] rounded-full z-0 block md:hidden animate-pulse-slow" />
           </div>
 
           <div className="w-full lg:w-1/2 space-y-10">
